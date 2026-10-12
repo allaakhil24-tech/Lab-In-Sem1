@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusVibe - College Event Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-calendar-days"></i> Campus<span>Vibe</span></a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#events">Events</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-login" id="loginBtn">Login</button>
+                <div class="menu-toggle" id="mobileMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover, Register & Experience Amazing College Events</h1>
+            <p>Your ultimate hub for technical fests, cultural extravaganzas, workshops, and sports tournaments.</p>
+            <div class="hero-buttons">
+                <a href="#events" class="btn-primary">Explore Events</a>
+                <a href="#categories" class="btn-secondary">Browse Categories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <h2 class="section-title">Event Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="tech">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Technical</h3>
+                    <p>Hackathons, Coding & Robotics</p>
+                </div>
+                <div class="category-card" data-category="cultural">
+                    <i class="fa-solid fa-music"></i>
+                    <h3>Cultural</h3>
+                    <p>Dance, Singing & Drama</p>
+                </div>
+                <div class="category-card" data-category="sports">
+                    <i class="fa-solid fa-futbol"></i>
+                    <h3>Sports</h3>
+                    <p>Inter-college Tournaments</p>
+                </div>
+                <div class="category-card" data-category="workshop">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h3>Workshops</h3>
+                    <p>Expert Seminars & Hands-on</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="events-header">
+                <h2 class="section-title">Upcoming Events</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="tech">Technical</button>
+                    <button class="filter-btn" data-filter="cultural">Cultural</button>
+                    <button class="filter-btn" data-filter="sports">Sports</button>
+                </div>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="events-grid" id="eventsGrid">
+                <!-- Event Card 1 -->
+                <div class="event-card" data-category="tech">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80" alt="Hackathon">
+                        <span class="event-badge tech">Technical</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 15, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 09:00 AM</span>
+                        </div>
+                        <h3 class="event-title">CodeStorm 24-Hour Hackathon</h3>
+                        <p class="event-venue"><i class="fa-solid fa-location-dot"></i> Main Auditorium, Block 3</p>
+                        <p class="event-desc">Build innovative solutions using AI and IoT. Exciting cash prizes worth $5,000 to be won!</p>
+                        <button class="btn-register" onclick="registerEvent('CodeStorm 24-Hour Hackathon')">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card" data-category="cultural">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Cultural Fest">
+                        <span class="event-badge cultural">Cultural</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 22, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 05:30 PM</span>
+                        </div>
+                        <h3 class="event-title">Rhythm & Beats Dance Night</h3>
+                        <p class="event-venue"><i class="fa-solid fa-location-dot"></i> Open Air Theatre</p>
+                        <p class="event-desc">Showcase your moves in solo and group dance battles. Let the rhythm take control!</p>
+                        <button class="btn-register" onclick="registerEvent('Rhythm & Beats Dance Night')">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card" data-category="sports">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80" alt="Basketball">
+                        <span class="event-badge sports">Sports</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Dec 02, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 03:00 PM</span>
+                        </div>
+                        <h3 class="event-title">Inter-College Basketball Championship</h3>
+                        <p class="event-venue"><i class="fa-solid fa-location-dot"></i> Indoor Sports Complex</p>
+                        <p class="event-desc">Cheer for your college team as top universities battle it out for the ultimate trophy.</p>
+                        <button class="btn-register" onclick="registerEvent('Inter-College Basketball Championship')">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card" data-category="tech">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="AI Workshop">
+                        <span class="event-badge tech">Technical</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Dec 10, 2026</span>
+                            <span><i class="fa-regular fa-clock"></i> 10:00 AM</span>
+                        </div>
+                        <h3 class="event-title">Generative AI & LLM Workshop</h3>
+                        <p class="event-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall, CS Department</p>
+                        <p class="event-desc">Learn hands-on prompt engineering and building lightweight machine learning tools.</p>
+                        <button class="btn-register" onclick="registerEvent('Generative AI & LLM Workshop')">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo"><i class="fa-solid fa-calendar-days"></i> Campus<span>Vibe</span></a>
+                <p>The premier platform for managing, tracking, and registering for college events seamlessly.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Upcoming Events</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Support</h3>
+                <p><i class="fa-solid fa-envelope"></i> support@campusvibe.edu</p>
+                <p><i class="fa-solid fa-phone"></i> +1 (555) 234-5678</p>
+                <p><i class="fa-solid fa-location-dot"></i> University Campus, Main Block</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CampusVibe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Registration Confirmation Modal -->
+    <div class="modal" id="regModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <i class="fa-solid fa-circle-check modal-icon"></i>
+            <h2>Registration Successful!</h2>
+            <p id="modalMessage">You have successfully registered for the event.</p>
+            <button class="btn-primary" id="modalOkBtn">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
